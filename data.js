@@ -1,7 +1,7 @@
 export const menuArray = [
     {
         name: "Tesla Model 2",
-        features: ["Compact Design", "Battery Range", "Autonomous Capabilities"],
+        features: ["Compact Design", "Battery Range", " Autonomous Capabilities"],
         id: 0,
         price: 25000,
         carImg: "./assets/3.jpg"

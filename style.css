@@ -11,15 +11,18 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    width: 100%;
 }
 
 .sub-container {
     display: flex;
     flex-direction: column;
     border: 4px solid red;
-    width: 40%;
+    width: 90%; /* Use a percentage for better responsiveness */
+    max-width: 600px; /* Prevent it from becoming too wide */
     border-radius: 10px;
-    padding: 20px; /* Added padding for better spacing */
+    padding: 20px;
+    overflow: hidden; /* Ensures content does not spill out */
 }
 
 .content1 img {
@@ -30,40 +33,43 @@ body {
 
 .carImg {
     width: 150px; 
-height: 100px;
-object-fit: cover;
-border-radius: 8px;
-border: 3px solid red;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+   
 }
 
 .items-display {
-    display: flex;
-    gap: 20px; 
-    /* justify-content: space-between;  */
-    align-items: flex-start; 
+    display: grid;
+    grid-template-columns: 25% 50% 25%; /* First div: 30%, Second div: 50%, Third div: 20% */
+    gap: 20px;
+    align-items: center; /* Aligns items vertically */
+    width: 100%;
     margin-bottom: 40px;
-    text-align: start;
 }
-.img, .names {
-    border: 2px solid red;
+
+
+
+
+
+
+/* Ensure the button is centered */
+.items-display > div:last-child {
+    justify-content: center;
 }
+
+/* .img, .names { */
+    /* border: 2px solid red; */
+/* } */
+
 .item {
     display: flex;
-    
-   
     gap: 10px; 
-   
-    width: 220px; 
+    width: 100%; /* Ensures items take full width */
     text-align: start;
     min-height: 250px; 
+    flex-wrap: wrap; /* Allow content to wrap if needed */
 }
-
-
-
-
-
-
-
 
 .item-content {
     display: flex;
@@ -75,18 +81,55 @@ border: 3px solid red;
 h2, p {
     margin: 0;
     padding: 0;
-   
 }
+
 h1 {
     font-size: 40px;
 }
+
 button {
-    margin-left: 75px;
+    margin: auto; /* Centers the button */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    background-color: violet;
+    font-weight: 900;
+    cursor: pointer;
+    margin-right: 50px;
+}
+.price {
+    color: #fb6f92;
+    font-weight: 900;
 }
 .features {
     width: 85%;
+    color: #073b4c;
+}
+.name {
+    color: #7678ed;
+}
+h1 {
+    text-align: center;
+    color: #00bbf9;
+    text-shadow: 2px 2px 2px #073b4c;
+}
 
+.items-checkout {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 768px) {
+    .items-display {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+    }
+
+    .carImg {
+        width: 100%; /* Make images responsive */
+        max-width: 200px;
+    }
+
+    button {
+        margin-left: 0; /* Center button */
+    }
 }
